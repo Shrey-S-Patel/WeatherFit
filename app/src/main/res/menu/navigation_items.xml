@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Register"
+        android:title="Register"
+        android:icon="@drawable/ic_baseline_app_registration_24"/>
+
+    <item
+        android:id="@+id/Sign_in"
+        android:title="Sign in"
+        android:icon="@drawable/ic_baseline_login_24"/>
+
+    <item
+        android:id="@+id/City_Search"
+        android:title="City Search"
+        android:icon="@drawable/ic_baseline_my_location_24"/>
+
+    <item
+        android:id="@+id/User_info"
+        android:title="User Information"
+        android:icon="@drawable/ic_baseline_person_24"/>
+
+    <item
+        android:id="@+id/Preferences"
+        android:title="Preferences"
+        android:icon="@drawable/ic_baseline_assignment_ind_24"/>
+
+    <item
+        android:id="@+id/Recommendations"
+        android:title="Recommendations"
+        android:icon="@drawable/ic_baseline_assistant_24"/>
+
+    <item
+        android:id="@+id/Log_out"
+        android:title="Log Out"
+        android:icon="@drawable/ic_baseline_close_24"/>
+</menu>

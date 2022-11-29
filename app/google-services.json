@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "480477836289",
+    "project_id": "weatherfit-fp",
+    "storage_bucket": "weatherfit-fp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480477836289:android:7900f82a0aa5c4e8dcbc00",
+        "android_client_info": {
+          "package_name": "weather.efk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480477836289-kvb9ovh41lejrmaa2dgbir8i9pua5rmq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6oGb1xxikQOav03oxMQ0aumKxqvWqiX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480477836289-kvb9ovh41lejrmaa2dgbir8i9pua5rmq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

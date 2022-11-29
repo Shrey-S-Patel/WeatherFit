@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".UserInformation">
+
+<EditText
+    android:id="@+id/uname_input"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:ems="10"
+    android:hint="Email"
+    android:text="tom23@gmail.com"
+    android:inputType="textEmailAddress"
+    android:textColorHint="#757575"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/username_input" />
+
+<ProgressBar
+    android:id="@+id/progress"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/password_input" />
+
+<Button
+    android:id="@+id/log_button"
+    android:layout_width="150sp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="28dp"
+    android:backgroundTint="@color/colorPrimary"
+    android:text="Save"
+    android:textColor="#FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/progress"
+    tools:ignore="DuplicateSpeakableTextCheck" />
+
+<EditText
+    android:id="@+id/password_input"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:ems="10"
+    android:hint="Password"
+    android:text="tom233"
+    android:inputType="text"
+    android:textColorHint="#757575"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/uname_input" />
+
+
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="100dp"
+    android:layout_marginTop="150dp"
+    android:layout_marginEnd="100dp"
+    android:text="User Information"
+    android:textColor="@color/colorPrimary"
+    android:textSize="30sp"
+    android:fontFamily="@font/poppinsbold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<EditText
+    android:id="@+id/name_input"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="38dp"
+    android:ems="10"
+    android:hint="Full Name"
+    android:text="Tom Holland"
+    android:inputType="textPersonName"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+<EditText
+    android:id="@+id/username_input"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:ems="10"
+    android:hint="User Name"
+    android:text="Tom-23"
+    android:inputType="text"
+    android:textColorHint="#757575"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.502"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/name_input" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
