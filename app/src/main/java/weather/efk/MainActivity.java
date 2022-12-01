@@ -22,6 +22,7 @@ import androidx.core.app.ActivityCompat;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -394,8 +395,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 startActivity(Rec_intent);
                 break;
             case R.id.Log_out:
-                Intent LO_intent=new Intent(MainActivity.this,MainActivity.class);
-                startActivity(LO_intent);
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 Toast t = Toast.makeText(this, "You have been logged out!", Toast.LENGTH_SHORT);
                 t.show();
                 break;

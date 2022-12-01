@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "480477836289",
-    "project_id": "weatherfit-fp",
-    "storage_bucket": "weatherfit-fp.appspot.com"
+    "project_number": "987141833630",
+    "firebase_url": "https://weatherproj-40516-default-rtdb.firebaseio.com",
+    "project_id": "weatherproj-40516",
+    "storage_bucket": "weatherproj-40516.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:480477836289:android:7900f82a0aa5c4e8dcbc00",
+        "mobilesdk_app_id": "1:987141833630:android:ac746ec21f37098736cc8f",
         "android_client_info": {
           "package_name": "weather.efk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "480477836289-kvb9ovh41lejrmaa2dgbir8i9pua5rmq.apps.googleusercontent.com",
+          "client_id": "987141833630-8rn0qlq52amb9fqhs6nr4k8vbdp1uhs9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB6oGb1xxikQOav03oxMQ0aumKxqvWqiX8"
+          "current_key": "AIzaSyDLFlTiDOApxQ4CUmmg1m-6IqRvihSLx_0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "480477836289-kvb9ovh41lejrmaa2dgbir8i9pua5rmq.apps.googleusercontent.com",
+              "client_id": "987141833630-8rn0qlq52amb9fqhs6nr4k8vbdp1uhs9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

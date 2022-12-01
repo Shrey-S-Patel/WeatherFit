@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -22,7 +26,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText password_input;
     TextView reg_text;
     Button log_btn;
-    //FirebaseAuth my_auth;
+
+    FirebaseAuth my_auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,75 +38,62 @@ public class LoginActivity extends AppCompatActivity {
         password_input = findViewById(R.id.password_input);
         log_btn = findViewById(R.id.log_button);
         reg_text = findViewById(R.id.reg_txt);
-    //    my_auth = FirebaseAuth.getInstance();
+
+        my_auth = FirebaseAuth.getInstance();
 
         log_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                //loginUserAccount();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                loginUserAccount();
             }
         });
-    }/*
-    private void loginUserAccount()
-    {
-        // Take the value of two edit texts in Strings
-        String email, password;
-        email = username_input.getText().toString();
-        password = password_input.getText().toString();
+    }
 
-        // validations for input email and password
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(),
-                            "Please enter email!!",
-                            Toast.LENGTH_LONG)
-                    .show();
-            return;
+    //Log in
+    private void loginUserAccount(){
+        String email = username_input.getText().toString();
+        String password = password_input.getText().toString();
+
+        if(TextUtils.isEmpty(email)){
+            username_input.setError("Email cannot be empty!");
+            username_input.requestFocus();
         }
-
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(),
-                            "Please enter password!!",
-                            Toast.LENGTH_LONG)
-                    .show();
-            return;
+        else if(TextUtils.isEmpty(password)){
+            password_input.setError("Password cannot be empty!");
+            password_input.requestFocus();
         }
-
-        // signin existing user
-        my_auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(
-                        new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(
-                                    @NonNull Task<AuthResult> task)
-                            {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(),
-                                                    "Login successful!!",
-                                                    Toast.LENGTH_LONG)
-                                            .show();
-
-
-                                    // if sign-in is successful
-                                    // intent to home activity
-                                    Intent intent
-                                            = new Intent(LoginActivity.this,
-                                            MainActivity.class);
-                                    startActivity(intent);
-                                }
-
-                                else {
-
-                                    // sign-in failed
-                                    Toast.makeText(getApplicationContext(),
-                                                    "Login failed!!",
-                                                    Toast.LENGTH_LONG)
-                                            .show();
-
-                                }
+        else{
+            my_auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                //Log.d(TAG, "signInWithEmail:success");
+                                FirebaseUser user = my_auth.getCurrentUser();
+                                Toast.makeText(getApplicationContext(), "Login Success!",
+                                        Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                //Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                Toast.makeText(getApplicationContext(), "Login failed.",
+                                        Toast.LENGTH_SHORT).show();
                             }
-                        });
-    }*/
+                        }
+                    });
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = my_auth.getCurrentUser();
+        if(currentUser != null){
+            Toast.makeText(this, "Already Logged In! Log Out First!", Toast.LENGTH_SHORT).show();
+            startActivity( new Intent(getApplicationContext(), MainActivity.class));
+        }
+    }
 }
