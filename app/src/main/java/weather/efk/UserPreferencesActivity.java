@@ -23,11 +23,9 @@ public class UserPreferencesActivity extends AppCompatActivity {
 
         coldF = findViewById(R.id.coldF);
         comfortableF = findViewById(R.id.comfortableF);
-        warmF = findViewById(R.id.warmF);
         hotF = findViewById(R.id.hotF);
         coldT = findViewById(R.id.coldT);
         comfortableT = findViewById(R.id.comfortableT);
-        warmT = findViewById(R.id.warmT);
         hotT = findViewById(R.id.hotT);
         spinner = findViewById(R.id.spinner);
         savePref_btn = findViewById(R.id.savePref_button);
@@ -51,8 +49,6 @@ public class UserPreferencesActivity extends AppCompatActivity {
         String coldTT = coldT.getText().toString();
         String comfortableFT = comfortableF.getText().toString();
         String comfortableTT = comfortableT.getText().toString();
-        String warmTT = warmT.getText().toString();
-        String warmFT = warmF.getText().toString();
         String hotTT = hotT.getText().toString();
         String hotFT = hotF.getText().toString();
     }

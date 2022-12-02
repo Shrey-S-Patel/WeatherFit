@@ -4,15 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/city"
-    android:backgroundTint="#000000"
+    android:background="@drawable/backscreen"
     tools:context=".CitySearch">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="401dp"
+        android:layout_width="301dp"
+        android:layout_height="301dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="254dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="268dp"
         android:alpha="0.7"
         android:background="@drawable/w03d"
         android:orientation="horizontal"
@@ -20,24 +25,31 @@
 
     <EditText
         android:id="@+id/id_cityEdit"
-        android:layout_width="200dp"
+        android:layout_width="239dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="525dp"
+        android:layout_marginEnd="86dp"
         android:layout_weight="1"
         android:backgroundTint="@color/city"
         android:fontFamily="@font/opensans"
+        android:hint="Enter New City"
         android:textColor="@color/white"
         android:textSize="22sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/id_citySearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@id/id_cityEdit"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Search" />
+        android:layout_centerInParent="true"
+        android:text="Search"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"/>
 
 
 </RelativeLayout>

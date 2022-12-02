@@ -48,14 +48,12 @@ public class RegisterActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         mref = database.getReference();
 
+
         //Button to register user
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createUser();
-
-                writeNewUser();
-
             }
         });
 
@@ -89,7 +87,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                             User user1 = new User(username, email, fullname);
 
-                            mref.child("users").child(username).setValue(user1);
+                            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                            String uid = firebaseUser.getUid();
+
+                            mref.child("users").child(uid).setValue(user1);
 
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information

@@ -4,25 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backscreen"
     tools:context=".RecommendationsActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="100dp"
+        android:layout_width="326dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="132dp"
         android:fontFamily="@font/poppinsbold"
-        android:text="Recommendation:"
+        android:text="Today's Recommendation:"
         android:textColor="@color/colorLightBlue"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintHorizontal_bias="0.305"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="502dp"
         android:background="@drawable/bottomlayout"
@@ -36,10 +37,10 @@
         <LinearLayout
             android:layout_width="450dp"
             android:layout_height="450dp"
-            android:background="@drawable/bottomlayer"
-            android:orientation="vertical"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="60dp"
+            android:background="@drawable/bottomlayer"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/Recs_Textview"

@@ -377,6 +377,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 break;
             case R.id.Current_location:
                 WeatherByLatLon(lat,lon);
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 return true;
             case R.id.City_Search:
                 Intent intent=new Intent(MainActivity.this,CitySearch.class);
